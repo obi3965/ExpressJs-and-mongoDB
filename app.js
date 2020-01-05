@@ -2,6 +2,11 @@ const express = require('express');
 const fs = require('fs');
 const app = express();
 
+
+//a middleware function to get our express json
+app.use(express.json());
+
+
 // app.get('/',(req,res)=>{
 //   res.status(200).json({
 //     message1:'hi me',
@@ -28,6 +33,13 @@ const tours = JSON.parse(
        tours
      }
    })
+ })
+
+
+ app.post('/api/v1/tours', (req,res)=>{
+
+  console.log(req.body);
+  res.send('done')
  })
 const port = 4000;
 app.listen(port, function(){
