@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "prod":"NODE_ENV=production nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -21,8 +22,12 @@
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.9.0",
     "express": "^4.17.1",
+    "mongoose": "^5.8.9",
     "morgan": "^1.9.1",
     "prettier": "^1.19.1",
     "pug": "^2.0.4"
+  },
+  "engines":{
+    "node":">= 10.0.0"
   }
 }
