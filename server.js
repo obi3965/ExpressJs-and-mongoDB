@@ -1,8 +1,12 @@
 const mongoose = require('mongoose')
 const dotenv = require('dotenv');
+
+//if we set our config env path here,it will log both the query url and object in the console
+dotenv.config({ path: './config.env' });
 const app = require('./app');
 
-dotenv.config({ path: './config.env' });
+//to print just the query object in the console.we set them here
+// dotenv.config({ path: './config.env' });
 
 const DB = process.env.DATABASE.replace('<PASSWORD>',
  process.env.DATABASE_PASSWORD
