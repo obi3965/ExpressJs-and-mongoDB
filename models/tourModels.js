@@ -58,6 +58,11 @@ const tourSchema = new mongoose.Schema({
     
   })
   
+  tourSchema.method('toJSON', function(){
+    const { __v, _id, ...object } = this.toObject();
+    object.id = _id;
+    return object;
+  })
   //to create our schema module
   const Tour = mongoose.model('Tour', tourSchema);
 
